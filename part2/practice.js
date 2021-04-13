@@ -1,4 +1,4 @@
-function dummy () {
+function dummy() {
   return 1;
 }
 /**
@@ -11,8 +11,8 @@ function dummy () {
  * @param {array} array
  * @returns {array}
  */
-function reverse (array) {
-  return [];
+function reverse(array) {
+  return array.reverse();
 }
 
 /**
@@ -26,8 +26,11 @@ function reverse (array) {
  * @returns {string}
  * 
  */
-function stringReverse (text) {
-  return '';
+function stringReverse(text) {
+  var splitString = str.split(text);
+  var reverseArray = splitString.reverse();
+  var joinArray = reverseArray.join("");
+  return joinArray;
 }
 
 
@@ -41,7 +44,7 @@ function stringReverse (text) {
  * @param {number} length
  * @returns {array}
  */
-function fibonacci (length) {
+function fibonacci(length) {
   return [];
 }
 
@@ -55,53 +58,59 @@ function fibonacci (length) {
  * @param {array} array
  * @returns {number}
  */
-function biggest (array) {
-  return 0;
-}
+function biggest(array) {
 
-/**
- * Creates an array of numbers progressing from 
- * start up to, but not including, end
- * 
- * YOU HAVE TO IMPLEMENT YOUR OWN ALGORITHM HERE!!!
- * DON'T USE ANY 3RD PARTY LIBRARIES.
- * 
- * @example
- * 
- * range(0,4) returns [0,1,2,3]
- * 
- * @param {number} start 
- * @param {number} end 
- * @returns {array}
- */
-function range (start, end) {
-  return [];
-}
+  var largest = 0;
+  for (i = 0; i <= largest; i++) {
+    if (array[i] > largest) {
+      var largest = array[i];
+    }
+    return largest;
+  }
 
-/**
- * Recursively flattens array.
- * 
- * YOU HAVE TO IMPLEMENT YOUR OWN ALGORITHM HERE!!!
- * DON'T USE ANY 3RD PARTY LIBRARIES.
- * 
- * @example
- * 
- * flatten([1,[2,[3,4],[5,[6]]]]) returns [1,2,3,4,5,6]
- * 
- * @param {array} array
- * @returns {array}
- */
-function flatten (array) {
-  return [];
-}
+  /**
+   * Creates an array of numbers progressing from 
+   * start up to, but not including, end
+   * 
+   * YOU HAVE TO IMPLEMENT YOUR OWN ALGORITHM HERE!!!
+   * DON'T USE ANY 3RD PARTY LIBRARIES.
+   * 
+   * @example
+   * 
+   * range(0,4) returns [0,1,2,3]
+   * 
+   * @param {number} start 
+   * @param {number} end 
+   * @returns {array}
+   */
+  function range(start, end) {
+    return [];
+  }
 
-module.exports = {
-  dummy,
-  fibonacci,
-  reverse,
-  flatten,
-  biggest,
-  flatten,
-  stringReverse,
-  range
-};
+  /**
+   * Recursively flattens array.
+   * 
+   * YOU HAVE TO IMPLEMENT YOUR OWN ALGORITHM HERE!!!
+   * DON'T USE ANY 3RD PARTY LIBRARIES.
+   * 
+   * @example
+   * 
+   * flatten([1,[2,[3,4],[5,[6]]]]) returns [1,2,3,4,5,6]
+   * 
+   * @param {array} array
+   * @returns {array}
+   */
+  function flatten(array) {
+    return [];
+  }
+
+  module.exports = {
+    dummy,
+    fibonacci,
+    reverse,
+    flatten,
+    biggest,
+    flatten,
+    stringReverse,
+    range
+  };
