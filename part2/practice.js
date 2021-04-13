@@ -117,17 +117,29 @@ function range(start, end) {
  * @param {array} array
  * @returns {array}
  */
-function flatten(array) {
+function flatten(arr) {
+  let result = [...arr];
+  let flattened = false;
+  let counter = 0;
+  
+  while (flattened === false){
+	// checks to see if the element at the counter index is an array
+      if (Array.isArray(result[counter])){
+        // unpacks the current array element back into the array
+        result.splice(counter, 1, ...result[counter]);
+        // if so the counter should start at the beginning of the array
+        counter = 0;
+        
+      } else {
+        counter += 1;
+      }
 
-  var flat = [];
-  for (var i = 0; i < array.length; i++) {
-    if (array[i] instanceof Array) {
-      flat.push.apply(flat, flatten.apply(this, array[i]));
-    } else {
-      flat.push(array[i]);
-    }
+      if (counter === result.length){
+        flattened = true;
+      }
   }
-  return flat;
+  
+  return result;
 }
 
 module.exports = {
