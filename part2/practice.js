@@ -87,7 +87,12 @@ function biggest(array) {
    * @returns {array}
    */
   function range(start, end) {
-    return [];
+    var list = [];
+    for (var i = start; i <= end -1 ; i++) {
+        list.push(i);
+    }
+
+    return list;
   }
 
   /**
@@ -104,7 +109,16 @@ function biggest(array) {
    * @returns {array}
    */
   function flatten(array) {
-    return [];
+
+    var flat = [];
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] instanceof Array) {
+            flat.push.apply(flat, flatten.apply(this, array[i]));
+        } else {
+            flat.push(array[i]);
+        }
+    }
+    return flat;
   }
 
   module.exports = {
