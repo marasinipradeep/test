@@ -63,13 +63,15 @@ function fibonacci(length) {
  * @returns {number}
  */
 function biggest(array) {
-  var largest = 0;
-  for (i = 0; i <= largest; i++) {
+  var largest = array[0];
+  for (i = 0; i <= array.length; i++) {
+  
     if (array[i] > largest) {
       var largest = array[i];
     }
     return largest;
   }
+}
 
   /**
    * Creates an array of numbers progressing from 
@@ -120,11 +122,12 @@ function biggest(array) {
     return flat;
   }
 
-}
 module.exports = {
   dummy,
   reverse,
   stringReverse,
   fibonacci,
   biggest,
+  range,
+  flatten
 };
