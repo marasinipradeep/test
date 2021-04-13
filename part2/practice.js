@@ -27,7 +27,7 @@ function reverse(array) {
  * 
  */
 function stringReverse(text) {
-  var splitString = str.split(text);
+  var splitString = text.split("");
   var reverseArray = splitString.reverse();
   var joinArray = reverseArray.join("");
   return joinArray;
@@ -91,7 +91,6 @@ function biggest(array) {
     for (var i = start; i <= end -1 ; i++) {
         list.push(i);
     }
-
     return list;
   }
 
@@ -121,13 +120,11 @@ function biggest(array) {
     return flat;
   }
 
-  module.exports = {
-    dummy,
-    fibonacci,
-    reverse,
-    flatten,
-    biggest,
-    flatten,
-    stringReverse,
-    range
-  };
+}
+module.exports = {
+  dummy,
+  reverse,
+  stringReverse,
+  fibonacci,
+  biggest,
+};
