@@ -45,7 +45,11 @@ function stringReverse(text) {
  * @returns {array}
  */
 function fibonacci(length) {
-  return [];
+  let arr = [0, 1];
+  for (let i = 2; i < length + 1; i++){
+    arr.push(arr[i - 2] + arr[i -1])
+  }
+ return arr[length]
 }
 
 /**
@@ -59,7 +63,6 @@ function fibonacci(length) {
  * @returns {number}
  */
 function biggest(array) {
-
   var largest = 0;
   for (i = 0; i <= largest; i++) {
     if (array[i] > largest) {
