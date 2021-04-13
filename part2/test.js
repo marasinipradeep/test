@@ -36,8 +36,8 @@ describe('savve javascript test', function () {
     const result1 = fibonacci(3);
     const result2 = fibonacci(6);
 
-    expect(result1).to.eql([1,1,2]);
-    expect(result2).to.eql([1,1,2,3,5,8]);
+    expect(result1).to.eql([0,1,1,2]);
+    expect(result2).to.eql([0,1,1,2,3,5,8]);
     done();
   });
 

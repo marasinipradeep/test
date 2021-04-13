@@ -39,17 +39,25 @@ function stringReverse(text) {
  * 
  * @example
  * 
- * fibonacci(5) returns [1,1,2,3,5]
+ * fibonacci(5) returns [0,1,1,2,3,5]
  * 
  * @param {number} length
  * @returns {array}
  */
-function fibonacci(length) {
-  let arr = [0, 1];
-  for (let i = 2; i < length + 1; i++){
-    arr.push(arr[i - 2] + arr[i -1])
+function fibonacci(n) {
+  {
+    if (n===1) 
+    {
+      return [0, 1];
+    } 
+    else 
+    {
+      var s = fibonacci(n - 1);
+      s.push(s[s.length - 1] + s[s.length - 2]);
+      return s;
+    }
   }
- return arr[length]
+
 }
 
 /**
@@ -64,63 +72,63 @@ function fibonacci(length) {
  */
 function biggest(array) {
   var max = array[0];
-  for(var i =1; i <array.length; i++){
+  for (var i = 1; i < array.length; i++) {
     var currentNum = array[i];
-    if(currentNum > max){
+    if (currentNum > max) {
       max = currentNum;
     }
   }
   return max;
 }
 
-  /**
-   * Creates an array of numbers progressing from 
-   * start up to, but not including, end
-   * 
-   * YOU HAVE TO IMPLEMENT YOUR OWN ALGORITHM HERE!!!
-   * DON'T USE ANY 3RD PARTY LIBRARIES.
-   * 
-   * @example
-   * 
-   * range(0,4) returns [0,1,2,3]
-   * 
-   * @param {number} start 
-   * @param {number} end 
-   * @returns {array}
-   */
-  function range(start, end) {
-    var list = [];
-    for (var i = start; i <= end -1 ; i++) {
-        list.push(i);
-    }
-    return list;
+/**
+ * Creates an array of numbers progressing from 
+ * start up to, but not including, end
+ * 
+ * YOU HAVE TO IMPLEMENT YOUR OWN ALGORITHM HERE!!!
+ * DON'T USE ANY 3RD PARTY LIBRARIES.
+ * 
+ * @example
+ * 
+ * range(0,4) returns [0,1,2,3]
+ * 
+ * @param {number} start 
+ * @param {number} end 
+ * @returns {array}
+ */
+function range(start, end) {
+  var list = [];
+  for (var i = start; i <= end - 1; i++) {
+    list.push(i);
   }
+  return list;
+}
 
-  /**
-   * Recursively flattens array.
-   * 
-   * YOU HAVE TO IMPLEMENT YOUR OWN ALGORITHM HERE!!!
-   * DON'T USE ANY 3RD PARTY LIBRARIES.
-   * 
-   * @example
-   * 
-   * flatten([1,[2,[3,4],[5,[6]]]]) returns [1,2,3,4,5,6]
-   * 
-   * @param {array} array
-   * @returns {array}
-   */
-  function flatten(array) {
+/**
+ * Recursively flattens array.
+ * 
+ * YOU HAVE TO IMPLEMENT YOUR OWN ALGORITHM HERE!!!
+ * DON'T USE ANY 3RD PARTY LIBRARIES.
+ * 
+ * @example
+ * 
+ * flatten([1,[2,[3,4],[5,[6]]]]) returns [1,2,3,4,5,6]
+ * 
+ * @param {array} array
+ * @returns {array}
+ */
+function flatten(array) {
 
-    var flat = [];
-    for (var i = 0; i < array.length; i++) {
-        if (array[i] instanceof Array) {
-            flat.push.apply(flat, flatten.apply(this, array[i]));
-        } else {
-            flat.push(array[i]);
-        }
+  var flat = [];
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] instanceof Array) {
+      flat.push.apply(flat, flatten.apply(this, array[i]));
+    } else {
+      flat.push(array[i]);
     }
-    return flat;
   }
+  return flat;
+}
 
 module.exports = {
   dummy,
