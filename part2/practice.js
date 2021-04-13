@@ -63,14 +63,14 @@ function fibonacci(length) {
  * @returns {number}
  */
 function biggest(array) {
-  var largest = array[0];
-  for (i = 0; i <= array.length; i++) {
-  
-    if (array[i] > largest) {
-      var largest = array[i];
+  var max = array[0];
+  for(var i =1; i <array.length; i++){
+    var currentNum = array[i];
+    if(currentNum > max){
+      max = currentNum;
     }
-    return largest;
   }
+  return max;
 }
 
   /**
